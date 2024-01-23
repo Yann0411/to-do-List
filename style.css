@@ -73,3 +73,28 @@ body {
     cursor: pointer;
     margin-left: 10px;
   }
+
+  @media (max-width: 600px) {
+    body {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 24px; /* Taille de police plus petite pour les petits écrans */
+    }
+
+    .task-form input[type="text"] {
+        font-size: 16px; /* Taille de police plus petite pour les petits écrans */
+    }
+
+    .task-form button {
+        padding: 10px 15px;
+        font-size: 16px; /* Taille de police plus petite pour les petits écrans */
+    }
+
+    #task-list li {
+        margin: 5px;
+        padding: 8px; /* Padding réduit pour les petits écrans */
+    }
+}
