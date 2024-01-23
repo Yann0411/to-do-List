@@ -45,7 +45,7 @@ body {
   }
   
   #task-list li.completed {
-    background-color: #e17777;
+   text-decoration: line-through;
   }
   
   /* Style du formulaire */
