@@ -31,7 +31,13 @@ addTaskButton.addEventListener('click', () => {
 
     const myLabel = document.createElement('label')
     // myLabel.htmlFor = "checkboxId"
-    myLabel.textContent = newTaskInput.value
+    if(newTaskInput.value.trim() === ""){
+        alert("renseigner le champs")
+    }else{
+        myLabel.textContent = newTaskInput.value
+    }
+
+  
     myLabel.appendChild(mycheckboxInput)
     li.append(myLabel)
 

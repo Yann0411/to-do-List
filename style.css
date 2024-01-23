@@ -7,73 +7,12 @@ body {
     max-width: 500px;
   }
   
-  /* Style de l'en-tête */
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 15px;
-  }
-  
-  header h1 {
-    margin: 0;
-    font-size: 36px;
-  }
-  
-  /* Style de la liste de tâches */
-  #task-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  #task-list li {
-    background-color: #fff;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px;
-  }
-  
-  #task-list li:last-child {
-    border-bottom: none;
-  }
-  
-  #task-list li .task-title {
-    flex-grow: 1;
-  }
-  
+
   #task-list li.completed {
    text-decoration: line-through;
   }
   
-  /* Style du formulaire */
-  .task-form {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .task-form input[type="text"] {
-    flex-grow: 1;
-    padding: 10px;
-    font-size: 18px;
-    border-radius: 5px;
-    border: none;
-  }
-  
-  .task-form button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-
+ 
   @media (max-width: 600px) {
     body {
         max-width: 100%;
