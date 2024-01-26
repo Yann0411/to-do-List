@@ -1,39 +1,15 @@
-/* Style général de la page */
 body {
-    font-family: Arial, sans-serif;
-    margin: auto;
-    padding: 0;
-    background-color: #f4f4f4;
-    max-width: 500px;
-  }
-  
+    max-width: 600px;
+    margin: 30px auto;
 
-  #task-list li.completed {
-   text-decoration: line-through;
-  }
-  
- 
-  @media (max-width: 600px) {
-    body {
-        max-width: 100%;
-        padding: 10px;
-    }
+}
 
-    header h1 {
-        font-size: 24px; /* Taille de police plus petite pour les petits écrans */
-    }
+.section {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 200px
+}
 
-    .task-form input[type="text"] {
-        font-size: 16px; /* Taille de police plus petite pour les petits écrans */
-    }
-
-    .task-form button {
-        padding: 10px 15px;
-        font-size: 16px; /* Taille de police plus petite pour les petits écrans */
-    }
-
-    #task-list li {
-        margin: 5px;
-        padding: 8px; /* Padding réduit pour les petits écrans */
-    }
+.completed {
+    text-decoration: line-through;
 }
