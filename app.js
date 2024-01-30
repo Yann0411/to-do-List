@@ -1,75 +1,97 @@
-const inputVal = document.querySelector('.inputValider')
-const ul = document.querySelector('.ulList')
+const inputCourses = document.querySelector('.course')
+const courseButton = document.querySelector('.courseButton')
+const ulDeTodoList = document.querySelector('.ulDeTodoList')
 const ulListCompleted = document.querySelector('.ulListCompleted')
 const ulListCancel = document.querySelector('.ulListCancel')
-const button = document.querySelector('button')
+const completedList = document.querySelector('.completedList')
+const cancelList = document.querySelector('.cancelList')
 
-let monStockage = []
-button.addEventListener('click', (label) => {
 
-    if (inputVal.value.trim() === "") {
-        alert('renseigner le champs')
+courseButton.addEventListener('click', () => {
+
+    if (inputCourses.value === "") {
+        alert("Veuillez insérer une tâche")
+
     } else {
-
-        const li = document.createElement('li')
-
-
-        const checkbox = document.createElement('input')
-        checkbox.classList.add('checkbox')
-        checkbox.type = "checkbox"
-        li.append(checkbox)
-
-        const label = document.createElement('label')
-        label.htmlFor = 'label'
-
-        label.textContent = inputVal.value
-        monStockage.push(inputVal.value)
-        localStorage.setItem("ToDo--List", JSON.stringify(monStockage))
-
-        li.append(label)
-
-        ul.append(li)
-
-        inputVal.value = ""
-
-        checkbox.addEventListener('change', (event) => {
-            if (event.target.checked) {
-                // li.classList.toggle('completed')
-                const liCompleted = document.createElement('li')
-                ulListCompleted.append(liCompleted)
-                liCompleted.textContent = label.textContent
-
-
-            } 
-
-
-        })
-
-        li.addEventListener('dblclick', () => {
-            console.log(li)
-            const liCancelled = document.createElement('li');
-            ulListCancel.append(liCancelled); // Assurez-vous que ulListCancel est correctement sélectionné
-            liCancelled.textContent = label.textContent;
-        
-            // Supprimer l'élément de liste de la liste actuelle
-             li.remove();
-        });
-
+        createElm(inputCourses.value)
     }
-
+    inputCourses.value = ""
+    console.log(inputCourses.value)
 })
 
+function createElm(text) {
+
+    // creattion d'un "li" 
+    const liDeTodoLIst = document.createElement('li')
+    liDeTodoLIst.classList.add('liDeTodoLIst')
+
+
+    // creation d'un input de type checkbox et ajout dans l'element "li" de la to Do list
+    const checkboxDetoList = document.createElement('input')
+    checkboxDetoList.type = 'checkbox'
+    liDeTodoLIst.append(checkboxDetoList)
+    // creation d'un label et ajout dans le "li" de la to Do list
+    const labelDeTodoList = document.createElement('label')
+    labelDeTodoList.classList.add('labelDeTodoList')
+
+    labelDeTodoList.textContent = text
+
+
+    //ajout du label dans la to Do List
+    liDeTodoLIst.append(labelDeTodoList)
+    //ajout du li dans le lu de la to do list 
+    ulDeTodoList.append(liDeTodoLIst)
+    listCochee(checkboxDetoList, liDeTodoLIst, ulListCompleted, labelDeTodoList.textContent)
+    addElmToAnotherList(liDeTodoLIst, ulListCancel, labelDeTodoList.textContent)
+    emptyTrashorBasket(completedList,ulListCompleted)
+    emptyTrashorBasket(cancelList,ulListCancel)
+
+
+}
+
+function listCochee(checkbox, li, ul, label) {
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+            setTimeout(()=>{
+                li.classList.toggle('completed')
+                li.textContent = label
+                ul.append(li)
+                label.textContent = ""
+                
+            },1000)
+      
+
+        } else {
+            li.classList.remove('completed')
+        }
+    })
+
+}
+
+
+function addElmToAnotherList(li, ul, label) {
+
+    li.querySelector('liDeTodoLIst')
+    li.addEventListener('dblclick', () => {
+        // const liDeListeSupprime = document.createElement('li')
+        li.textContent = label
+        ul.append(li)
+        label.textContent = ""
+
+    })
+
+}
+
+
+
+function emptyTrashorBasket(inputElm,ul){
+    inputElm.addEventListener('click',()=>{
+        ul.textContent=""
+    })
+    
+
+}
 
 
 
 
-// const animal = {
-//     monChien : "Berger",
-// }
-
-
-// function saveInStorage(){
-//     localStoragestorage.setItem("animal", JSON.stringify(animal));
-// }
-
-// saveInStorage()

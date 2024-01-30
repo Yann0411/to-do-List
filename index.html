@@ -2,86 +2,84 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Ma To-Do List</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Ma To-Do List</title>
 </head>
 
 <body>
-<div class="section">
+  <div class="section">
     <h1>to-do List</h1>
 
-</div>
-   
-
-    <div class="section">
-
-        <section class="toDoList">
-            <fieldset>
-                <legend>Courses</legend>
-                <div class="divForm">
-                    <input type="text" class="inputValider">
-                    <button>Ajouter</button>
-                </div>
-            </fieldset>
-            <br><br>
-
-            <fieldset>
-                <legend>The Alice toDoList</legend>
-                <div class="list">
-                    <ul class="ulList">
-
-                    </ul>
-                </div>
-            </fieldset>
-
-        </section>
-
-        <section class="Completed">
-        
-            <fieldset>
-                <legend>Liste completées</legend>
-                <div class="list">
-                    <ul class="ulListCompleted">
-
-                    </ul>
-                </div>
-                <div class="divForm">
-                    <input type="text" class="inputValider">
-                    <button>Remettre dans la liste</button>
-                </div>
-            </fieldset>
-
-        </section>
-
-        <section class="Suppression">
+  </div>
 
 
-            <fieldset>
-                <legend>Liste Supprimées</legend>
-                <div class="list">
-                    <ul class="ulListCancel">
+  <div class="section">
 
-                    </ul>
-                </div>
-                <div class="divForm">
-                    <input type="text" class="inputValider">
-                    <button>Remettre dans la liste</button>
-                </div>
-            </fieldset>
+    <section class="toDoList">
+      <fieldset>
+        <legend>Courses</legend>
+        <div class="divForm">
+          <input type="text" class="course">
+          <button class="courseButton">Ajouter</button>
+        </div>
+      </fieldset>
+      <br><br>
 
-        </section>
+      <fieldset>
+        <legend>Listes</legend>
+        <div class="list">
+          <ul class="ulDeTodoList">
+
+          </ul>
+        </div>
+      </fieldset>
+
+    </section>
+
+    <section class="finished">
+
+      <fieldset>
+        <legend>Panier</legend>
+        <div class="list">
+          <ul class="ulListCompleted">
+
+          </ul>
+        </div>
+        <div class="divForm">
+          <button class="completedList">vider</button>
+        </div>
+      </fieldset>
+
+    </section>
+
+    <section class="Suppression">
+
+
+      <fieldset>
+        <legend>Corbeille</legend>
+        <div class="list">
+          <ul class="ulListCancel">
+
+          </ul>
+        </div>
+        <div class="divForm">
+          <button class="cancelList">vider</button>
+        </div>
+      </fieldset>
+
+    </section>
 
 
 
-    </div>
+  </div>
 
 
 
 
 
-    <script src="./app.js"></script>
+  <script src="./app.js"></script>
 
 </body>
 
